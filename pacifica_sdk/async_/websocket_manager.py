@@ -41,7 +41,7 @@ class WebsocketManager:
         self._return_raw_msgs: bool = return_raw_msgs
 
         self._ws_worker_task = asyncio.create_task(self._ws_worker())
-        # self._ping_worker_task = asyncio.create_task(self._ping_worker())
+        self._ping_worker_task = asyncio.create_task(self._ping_worker())
 
     def _create_session(self):
         return aiohttp.ClientSession()
