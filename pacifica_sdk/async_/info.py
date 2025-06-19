@@ -59,7 +59,6 @@ class Info(AsyncHttpClient):
             params=params.model_dump(exclude_none=True),
             response_model=ApiResponse[list[CandleInfo]],
         )
-        print(res.success)
         return res.data
 
     async def get_recent_trades(self, params: GetRecentTrades) -> list[TradeInfo]:
